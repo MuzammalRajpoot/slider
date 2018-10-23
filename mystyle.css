@@ -1,0 +1,252 @@
+/*
+    Author     : Muzammal Rajpoot
+*/
+@keyframes Blocco1 {
+    0% {
+        height: 0;
+        opacity: 0
+    }
+    4.375% {
+        height: 100%;
+        opacity: 1
+    }
+    16.875% {
+        height: 100%;
+        opacity: 1
+    }
+    21.25% {
+        height: 0;
+        opacity: 0
+    }
+    100% {
+        height: 0;
+        opacity: 0
+    }
+}
+
+@keyframes Blocco2 {
+    0% {
+        height: 0;
+        opacity: 0
+    }
+    20% {
+        height: 0;
+        opacity: 0
+    }
+    24.375% {
+        height: 100%;
+        opacity: 1
+    }
+    36.875% {
+        height: 100%;
+        opacity: 1
+    }
+    41.25% {
+        height: 0;
+        opacity: 0
+    }
+    100% {
+        height: 0;
+        opacity: 0
+    }
+}
+
+@keyframes Blocco3 {
+    0% {
+        height: 0;
+        opacity: 0
+    }
+    40% {
+        height: 0;
+        opacity: 0
+    }
+    44.375% {
+        height: 100%;
+        opacity: 1
+    }
+    56.875% {
+        height: 100%;
+        opacity: 1
+    }
+    61.25% {
+        height: 0;
+        opacity: 0
+    }
+    100% {
+        height: 0;
+        opacity: 0
+    }
+}
+
+@keyframes Blocco4 {
+    0% {
+        height: 0;
+        opacity: 0
+    }
+    60% {
+        height: 0;
+        opacity: 0
+    }
+    64.375% {
+        height: 100%;
+        opacity: 1
+    }
+    76.875% {
+        height: 100%;
+        opacity: 1
+    }
+    81.25% {
+        height: 0;
+        opacity: 0
+    }
+    100% {
+        height: 0;
+        opacity: 0
+    }
+}
+
+@keyframes Blocco5 {
+    0% {
+        height: 0;
+        opacity: 0
+    }
+    78.75% {
+        height: 0;
+        opacity: 0
+    }
+    83.155% {
+        height: 100%;
+        opacity: 1
+    }
+    95.655% {
+        height: 100%;
+        opacity: 1
+    }
+    100% {
+        height: 0;
+        opacity: 0
+    }
+}
+
+@keyframes BloccoNone {}
+.ShowCase
+ {
+    width: 100%
+}
+
+
+.ShowCase {
+    z-index: -1
+}
+
+.ShowCase:after {
+    content: "";
+    clear: both;
+    display: block
+}
+
+.ShowCaseItem {
+    width: 20%;
+    float: left;
+    position: relative;
+    display: table
+}
+
+.ShowCaseImage,
+.ShowCaseImage img,
+.ShowCaseLink img {
+    width: 100%;
+    display: block
+}
+
+.ShowCaseImage {}
+
+.ShowCaseLink {
+    height: 100%;
+    width: 100%;
+    display: table-cell;
+    position: absolute;
+    top: 0;
+    z-index: 1
+}
+
+.ShowCaseLink span {
+    height: 0;
+    width: 100%;
+    opacity: 0;
+    display: block;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear
+}
+
+.ShowCaseItem:nth-child(1) .ShowCaseLink span {
+    animation-name: Blocco1
+}
+
+.ShowCaseItem:nth-child(2) .ShowCaseLink span {
+    animation-name: Blocco2
+}
+
+.ShowCaseItem:nth-child(3) .ShowCaseLink span {
+    animation-name: Blocco3
+}
+
+.ShowCaseItem:nth-child(4) .ShowCaseLink span {
+    animation-name: Blocco4
+}
+
+.ShowCaseItem:nth-child(5) .ShowCaseLink span {
+    animation-name: Blocco5;
+    animation-delay: 200ms
+}
+
+.ShowCase:hover .ShowCaseItem .ShowCaseLink span {
+    animation-name: BloccoNone
+}
+
+.ShowCaseLink span span {
+    height: 100%;
+    display: block;
+    overflow: hidden
+}
+
+.ShowCaseLink a {
+    height: 0;
+    width: 0;
+    content: "";
+    background-image: url('ShowCaseLinkIcon.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 46px;
+    margin: 0 auto;
+    margin-top: -18px;
+    position: absolute;
+    vertical-align: middle;
+    top: 50%;
+    right: 0;
+    bottom: 50%;
+    left: 0;
+    display: block;
+    opacity: 0;
+    transition-proprety: height, width, opacity;
+    transition-duration: .5s
+}
+
+.ShowCaseLink:hover a,
+.ShowCaseLink:active a {
+    height: 46px;
+    width: 46px;
+    opacity: 1
+}
+
+.ShowCaseLink span {
+    transition-property: height, opacity;
+    transition-duration: .4s, 1s
+}
+
+.ShowCaseLink:hover span {
+    height: 100%;
+    opacity: 1;
+    animation: none
+}
